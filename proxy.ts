@@ -7,7 +7,7 @@ export function proxy(request: NextRequest) {
 
 	const csp = [
 		`default-src 'self'`,
-		`script-src 'self' 'nonce-${nonce}' 'strict-dynamic'${isDev ? " 'unsafe-eval'" : ''} https://va.vercel-scripts.com`,
+		`script-src 'self' 'nonce-${nonce}'${isDev ? " 'unsafe-eval'" : ''} https://va.vercel-scripts.com`,
 		`style-src 'self' 'unsafe-inline'`,
 		`img-src 'self' https://images.unsplash.com https://cdn.balisquad.com data: blob:`,
 		`font-src 'self'`,

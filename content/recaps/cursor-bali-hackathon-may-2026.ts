@@ -12,10 +12,10 @@ export const cursorBaliHackathonMay2026Recap: RecapData = {
 	attendees: 39,
 	summary: [
 		'Our very first Cursor event in Bali was an incredible success. The event sold out within a couple of days, and the energy throughout the day was amazing.',
-		'Out of 40 registered attendees, 31 showed up — around a 75% attendance rate — with several more joining from the waitlist. In total, we had 39 participants, a support team of 6, and many people stayed afterward to network and hang out. We completely exceeded the venue’s intended capacity of 30 people.',
+		'Out of 40 registered attendees, 31 showed up, around a 75% attendance rate, with several more joining from the waitlist. In total, we had 39 participants, a support team of 6, and many people stayed afterward to network and hang out. We completely exceeded the venue’s intended capacity of 30 people.',
 		'Despite having only 2.5 hours, participants shipped an impressive range of projects across 13 teams.',
 		'One key takeaway was that team formation and judging criteria can be improved further. For future events, we’re planning to introduce more structured scoring using metrics like deployment status, audience votes, clap-o-meter scores, and overall execution quality.',
-		'Everyone was pumped up — people were already asking when the next event would happen before this one even ended. Bali is clearly ready for more builder events, and we’re also exploring the idea of organizing a Cafe Cursor to bring more of the non-tech crowd into the community.',
+		'Everyone was pumped up.People were already asking when the next event would happen before this one even ended. Bali is clearly ready for more builder events, and we’re also exploring the idea of organizing a Cafe Cursor to bring more of the non-tech crowd into the community.',
 	],
 	host: {
 		name: 'Bukithub Coworking Space',

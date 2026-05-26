@@ -36,22 +36,27 @@ function GalleryMarqueeRow({ row, isFirstRow }: { row: MarqueeRowConfig; isFirst
 				}`}
 				style={{ ['--marquee-duration' as string]: `${row.duration}s` }}
 			>
-				{loop.map((photo, index) => (
-					<div
-						key={`${photo.src}-${index}`}
-						className="relative h-36 w-[13.5rem] shrink-0 overflow-hidden rounded-2xl border border-cursor-border/50 bg-cursor-bg-dark shadow-[0_12px_40px_-20px_rgba(0,0,0,0.75)] md:h-44 md:w-[17rem]"
-					>
-						<Image
-							src={photo.src}
-							alt={photo.alt}
-							fill
-							className="object-cover transition-transform duration-500 hover:scale-[1.03]"
-							sizes="(max-width: 768px) 216px, 272px"
-							priority={isFirstRow && index === 0}
-						/>
-						<div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/[0.06]" />
-					</div>
-				))}
+				{loop.map((photo, index) => {
+					const isLcp = isFirstRow && index === 0 && photo.priority;
+
+					return (
+						<div
+							key={`${photo.src}-${index}`}
+							className="relative h-36 w-[13.5rem] shrink-0 overflow-hidden rounded-2xl border border-cursor-border/50 bg-cursor-bg-dark shadow-[0_12px_40px_-20px_rgba(0,0,0,0.75)] md:h-44 md:w-[17rem]"
+						>
+							<Image
+								src={photo.src}
+								alt={photo.alt}
+								fill
+								className="object-cover transition-transform duration-500 hover:scale-[1.03]"
+								sizes="(max-width: 768px) 216px, 272px"
+								priority={isLcp}
+								loading={isLcp ? 'eager' : 'lazy'}
+							/>
+							<div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/[0.06]" />
+						</div>
+					);
+				})}
 			</div>
 		</div>
 	);

@@ -35,21 +35,26 @@ function MarqueeStrip({ row }: { row: MarqueeRow }) {
 				}`}
 				style={{ ['--marquee-duration' as string]: `${row.duration}s` }}
 			>
-				{loop.map((photo, index) => (
-					<div
-						key={`${photo.src}-${index}`}
-						className="relative h-28 w-44 shrink-0 overflow-hidden rounded-xl md:h-36 md:w-52"
-					>
-						<Image
-							src={photo.src}
-							alt={photo.alt}
-							fill
-							className="object-cover"
-							sizes="(max-width: 768px) 176px, 208px"
-							loading="lazy"
-						/>
-					</div>
-				))}
+				{loop.map((photo, index) => {
+					const isLcp = index === 0 && photo.priority;
+
+					return (
+						<div
+							key={`${photo.src}-${index}`}
+							className="relative h-28 w-44 shrink-0 overflow-hidden rounded-xl md:h-36 md:w-52"
+						>
+							<Image
+								src={photo.src}
+								alt={photo.alt}
+								fill
+								className="object-cover"
+								sizes="(max-width: 768px) 176px, 208px"
+								priority={isLcp}
+								loading={isLcp ? 'eager' : 'lazy'}
+							/>
+						</div>
+					);
+				})}
 			</div>
 		</div>
 	);

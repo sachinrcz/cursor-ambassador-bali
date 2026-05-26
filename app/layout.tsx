@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { connection } from 'next/server';
 import { Analytics } from '@vercel/analytics/react';
 import { I18nProvider } from '@/lib/i18n';
 import { siteConfig, getSiteUrl } from '@/content/site.config';
@@ -15,7 +16,9 @@ export const metadata: Metadata = {
 	},
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+	await connection();
+
 	return (
 		<html lang={siteConfig.defaultLocale}>
 			<body className="antialiased">

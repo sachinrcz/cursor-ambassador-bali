@@ -2,12 +2,12 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 export function proxy(request: NextRequest) {
-	const nonce = crypto.randomUUID();
+	const nonce = Buffer.from(crypto.randomUUID()).toString('base64');
 	const isDev = process.env.NODE_ENV === 'development';
 
 	const csp = [
 		`default-src 'self'`,
-		`script-src 'self' 'nonce-${nonce}'${isDev ? " 'unsafe-eval'" : ''} https://va.vercel-scripts.com`,
+		`script-src 'self' 'nonce-${nonce}' 'strict-dynamic'${isDev ? " 'unsafe-eval'" : ''} https://va.vercel-scripts.com`,
 		`style-src 'self' 'unsafe-inline'`,
 		`img-src 'self' https://images.unsplash.com https://cdn.balisquad.com data: blob:`,
 		`font-src 'self'`,

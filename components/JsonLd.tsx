@@ -12,7 +12,13 @@ function serializeJsonLd(data: Record<string, unknown> | Record<string, unknown>
 }
 
 const JsonLd: React.FC<JsonLdProps> = ({ data }) => {
-	return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(data) }} />;
+	return (
+		<script
+			type="application/ld+json"
+			suppressHydrationWarning
+			dangerouslySetInnerHTML={{ __html: serializeJsonLd(data) }}
+		/>
+	);
 };
 
 export default JsonLd;

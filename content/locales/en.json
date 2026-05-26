@@ -2,6 +2,17 @@
 	"nav": {
 		"joinUs": "Join us"
 	},
+	"hero": {
+		"title": "Cursor Community {country}",
+		"subtitle": "The official hub for Indonesia's Cursor developer community. Events, recaps, and more.",
+		"viewEvents": "Upcoming Events",
+		"joinNextEvent": "Join Next Event"
+	},
+	"recentEvents": {
+		"eyebrow": "Community",
+		"heading": "Recent events",
+		"subtitle": "Scenes from Cursor meetups, workshops, and hangouts across Indonesia."
+	},
 	"home": {
 		"featured": "Featured",
 		"upcomingEvents": "Upcoming Events",

@@ -34,8 +34,7 @@ export interface Partner {
 	name: string;
 	logo: string;
 	url: string;
-	logoBg?: string;
-	logoHeight?: string;
+	maxHeight?: number;
 }
 
 export interface FeaturedResource {
@@ -48,17 +47,7 @@ export interface FeaturedResource {
 export interface HeaderPhoto {
 	src: string;
 	alt: string;
-	row: number;
-	col: number;
-	rowSpan?: number;
-	colSpan?: number;
-	mobile?: {
-		row: number;
-		col: number;
-		rowSpan?: number;
-		colSpan?: number;
-	};
-	mobileHidden?: boolean;
+	priority?: boolean;
 }
 
 export interface GalleryPhoto {

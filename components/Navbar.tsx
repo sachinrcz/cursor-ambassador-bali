@@ -70,20 +70,20 @@ export default function Navbar() {
             : 'bg-cursor-bg/80 backdrop-blur-md border-b border-transparent'
         }`}
       >
-        <div className="flex justify-between items-center px-6 md:px-12 lg:px-16 h-14">
-          <a href="#" className="flex items-center gap-3">
+        <div className="flex justify-between items-center px-6 md:px-12 lg:px-16 h-14 min-w-0">
+          <a href="#" className="flex items-center gap-2 md:gap-3 min-w-0 shrink">
             <Image
               src="/cursor-logo.svg"
               alt="Cursor"
-              width={120}
-              height={32}
+              width={100}
+              height={28}
               priority
-              className="h-6 md:h-8 w-auto"
+              className="h-5 md:h-6 w-auto shrink-0"
             />
-            <span className="font-cursor text-lg md:text-xl font-semibold tracking-tight text-cursor-text">
+            <span className="font-cursor text-sm md:text-base font-semibold tracking-tight text-cursor-text truncate">
               {siteConfig.communityName}
               {siteConfig.communityNameLocal ? (
-                <span className="font-thai font-bold tracking-wide text-xl md:text-2xl text-cursor-text-secondary ml-2">
+                <span className="font-thai font-bold tracking-wide text-base md:text-lg text-cursor-text-secondary ml-1.5 md:ml-2">
                   {siteConfig.communityNameLocal}
                 </span>
               ) : null}

@@ -3,6 +3,7 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import HeroHeader from '@/components/HeroHeader';
+import RecentEventsGallery from '@/components/RecentEventsGallery';
 import AmbassadorSection from '@/components/AmbassadorSection';
 import FeaturedSection from '@/components/FeaturedSection';
 import UpcomingEvents from '@/components/UpcomingEvents';
@@ -12,6 +13,7 @@ import SectionDivider from '@/components/SectionDivider';
 import Footer from '@/components/Footer';
 import JsonLd from '@/components/JsonLd';
 import { siteConfig } from '@/content/site.config';
+import { headerPhotos } from '@/content/header-photos';
 import { upcomingEvents } from '@/content/events';
 
 function buildHomeJsonLd() {
@@ -47,17 +49,15 @@ const Home: React.FC = () => {
 			<JsonLd data={buildHomeJsonLd()} />
 			<Navbar />
 			<HeroHeader />
+			<RecentEventsGallery photos={headerPhotos} />
 
 			<div className="max-w-5xl mx-auto px-6 py-16 md:py-24">
-				<AmbassadorSection />
-				<SectionDivider />
-				<FeaturedSection />
-				<SectionDivider />
 				<UpcomingEvents />
 				<SectionDivider />
 				<PastEvents />
 				<SectionDivider />
-				<GlobalEvents />
+				
+				<AmbassadorSection />
 				<Footer />
 			</div>
 		</main>

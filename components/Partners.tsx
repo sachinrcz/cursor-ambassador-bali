@@ -13,36 +13,34 @@ const Partners: React.FC = () => {
 	}
 
 	return (
-		<div className="mb-8">
-			<h3 className="text-xs uppercase tracking-wider text-cursor-text-muted font-medium mb-4">
+		<div className="mb-10">
+			<p className="text-center text-[11px] uppercase tracking-[0.22em] text-cursor-text-muted mb-6">
 				{t('footer.hostingPartners')}
-			</h3>
-			<div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-				{partners.map((partner) => (
-					<a
-						key={partner.name}
-						href={partner.url}
-						target="_blank"
-						rel="noopener noreferrer"
-						className="bg-cursor-bg-dark border border-cursor-border rounded-md p-3 flex flex-col items-center justify-center gap-2 min-h-[96px] hover:border-cursor-border-emphasis transition-colors group"
-					>
-						<div
-							className="w-full rounded-sm overflow-hidden px-2 py-2"
-							style={{ backgroundColor: partner.logoBg ?? '#ffffff' }}
+			</p>
+
+			<div className="rounded-2xl border border-cursor-border/80 bg-cursor-surface/40 px-4 py-6 md:px-8 md:py-8">
+				<div className="mx-auto flex max-w-2xl flex-wrap items-center justify-center gap-3 md:gap-5">
+					{partners.map((partner) => (
+						<a
+							key={partner.name}
+							href={partner.url}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="group flex h-[4.25rem] w-[9.5rem] md:h-[5rem] md:w-[11rem] shrink-0 items-center justify-center rounded-xl border border-cursor-border/70 bg-cursor-bg-dark px-3 py-2.5 transition-all duration-300 hover:border-cursor-border-emphasis hover:bg-cursor-surface hover:scale-[1.02]"
+							aria-label={partner.name}
 						>
-							<div className={`relative ${partner.logoHeight ?? 'h-10'} w-full`}>
-								<Image
-									src={partner.logo}
-									alt={partner.name}
-									fill
-									className="object-contain opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition duration-300"
-									sizes="(max-width: 768px) 45vw, 20vw"
-								/>
-							</div>
-						</div>
-						<span className="text-[11px] text-cursor-text-muted">{partner.name}</span>
-					</a>
-				))}
+							<Image
+								src={partner.logo}
+								alt={partner.name}
+								width={160}
+								height={64}
+								className="max-h-9 md:max-h-11 w-auto max-w-full object-contain"
+								style={partner.maxHeight ? { maxHeight: partner.maxHeight } : undefined}
+								sizes="(max-width: 768px) 28vw, 160px"
+							/>
+						</a>
+					))}
+				</div>
 			</div>
 		</div>
 	);

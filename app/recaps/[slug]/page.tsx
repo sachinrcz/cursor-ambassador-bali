@@ -4,6 +4,7 @@ import EventRecap from '@/components/EventRecap';
 import JsonLd from '@/components/JsonLd';
 import { recapsBySlug } from '@/content/recaps';
 import { siteConfig } from '@/content/site.config';
+import { getRecapMetadata } from '@/lib/site-metadata';
 
 interface RecapPageProps {
 	params: Promise<{ slug: string }>;
@@ -15,17 +16,15 @@ export async function generateMetadata({ params }: RecapPageProps): Promise<Meta
 	if (!recap) return {};
 
 	const description = recap.summary[0] || `Recap of ${recap.title}`;
+	const coverPhoto = recap.photos[0];
 
-	return {
-		title: `${recap.title} | ${siteConfig.communityName}`,
+	return getRecapMetadata({
+		title: recap.title,
 		description,
-		openGraph: {
-			title: recap.title,
-			description,
-			type: 'article',
-			...(recap.photos[0]?.src ? { images: [{ url: recap.photos[0].src, alt: recap.photos[0].alt }] } : {}),
-		},
-	};
+		slug,
+		image: coverPhoto?.src,
+		imageAlt: coverPhoto?.alt,
+	});
 }
 
 function buildRecapJsonLd(slug: string) {

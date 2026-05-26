@@ -5,6 +5,9 @@ export type SiteConfig = {
 	communityNameLocal?: string;
 	country: string;
 	siteUrl: string;
+	seoTitle: string;
+	seoDescription: string;
+	seoKeywords: string[];
 	lumaUrl: string;
 	instagramUrl?: string;
 	xUrl?: string;
@@ -19,6 +22,19 @@ export const siteConfig: SiteConfig = {
 	communityName: 'Indonesia',
 	country: 'Indonesia',
 	siteUrl: 'https://www.cursorindonesia.com',
+	seoTitle: 'Cursor Community Indonesia',
+	seoDescription:
+		"The official hub for Indonesia's Cursor developer community. Find upcoming meetups, event recaps, and connect with local ambassadors.",
+	seoKeywords: [
+		'Cursor',
+		'Cursor Indonesia',
+		'Cursor community',
+		'developer meetups Indonesia',
+		'Cursor Bali',
+		'Cursor Jakarta',
+		'AI coding',
+		'developer events',
+	],
 	lumaUrl: 'https://lu.ma/cursor-community',
 	// REPLACE: Add your Discord invite link when ready.
 	instagramUrl: 'https://www.instagram.com/cursorbali/',

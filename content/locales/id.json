@@ -1,0 +1,92 @@
+{
+	"nav": {
+		"joinUs": "Bergabung"
+	},
+	"hero": {
+		"title": "Komunitas Cursor {country}",
+		"subtitle": "Pusat resmi komunitas developer Cursor Indonesia. Acara, rekap, dan lainnya.",
+		"viewEvents": "Acara Mendatang",
+		"joinNextEvent": "Gabung Acara Berikutnya"
+	},
+	"recentEvents": {
+		"eyebrow": "Komunitas",
+		"heading": "Acara terbaru",
+		"subtitle": "Momen dari meetup, workshop, dan hangout Cursor di seluruh Indonesia."
+	},
+	"home": {
+		"featured": "Unggulan",
+		"upcomingEvents": "Acara Mendatang",
+		"upcomingHeading": "Selanjutnya",
+		"register": "Daftar",
+		"pastEvents": "Acara Sebelumnya",
+		"pastEventsHeading": "Rekap Acara",
+		"attendees": "{count} peserta",
+		"hostedBy": "Diselenggarakan oleh",
+		"viewRecap": "Lihat rekap",
+		"viewSlides": "Lihat slide"
+	},
+	"ambassadors": {
+		"title": "Ambassador Cursor {communityName}",
+		"heading": "Kenali Tim"
+	},
+	"joinCommunity": {
+		"heading": "Gabung Komunitas",
+		"subtitle": "Baik Anda developer berpengalaman maupun baru memulai, ada tempat untuk Anda di {communityName}.",
+		"instagram": "Ikuti di Instagram",
+		"x": "Gabung di X",
+		"discord": "Gabung Discord",
+		"joinNextEvent": "Gabung Acara Berikutnya"
+	},
+	"footer": {
+		"hostingPartners": "Mitra Penyelenggara",
+		"community": "Cursor Community",
+		"allEvents": "Semua acara di Luma",
+		"madeWith": "Dibuat dengan Cursor oleh ambassador di seluruh dunia",
+		"joinNext": "Gabung acara berikutnya",
+		"followUs": "Ikuti Cursor di X"
+	},
+	"featured": {
+		"defaultDescription": "Seri workshop praktis dan hands-on untuk builder yang ingin belajar Cursor dengan workflow nyata."
+	},
+	"recap": {
+		"title": "Rekap acara",
+		"speakers": "Pembicara",
+		"projects": "Proyek yang dipamerkan",
+		"highlights": "Umpan balik komunitas",
+		"resources": "Sumber daya",
+		"by": "oleh",
+		"galleryTitle": "Foto",
+		"gallerySubtitle": "{count} foto dari acara",
+		"openPhoto": "Buka foto {index}",
+		"closeGallery": "Tutup galeri",
+		"prevPhoto": "Foto sebelumnya",
+		"nextPhoto": "Foto berikutnya",
+		"photoLabel": "Foto {index} dari {total}"
+	},
+	"photos": {
+		"title": "Catatan tentang foto",
+		"description": "Kami akan mengambil foto dan video selama acara untuk media sosial dan konten Cursor Community di masa depan.",
+		"preference": "Jika Anda lebih memilih tidak difoto:",
+		"option1": "Beritahu host saat Anda tiba",
+		"option2": "Kami akan memastikan preferensi Anda dihormati",
+		"thanks": "Terima kasih atas pengertiannya."
+	},
+	"matchmaking": {
+		"title": "Ingin bertemu orang baru?",
+		"howItWorks": "Cara kerjanya",
+		"step1": "Datang ke meja host dan ambil {numberCard} (1-10)",
+		"step2": "Temukan orang lain dengan {sameNumber}",
+		"step3": "Duduk bersama dan co-work",
+		"iceBreakers": "Pembuka percakapan",
+		"question1": "\"Pernah pakai Cursor sebelumnya?\"",
+		"question2": "\"Sedang membangun sesuatu keren dengan Cursor?\"",
+		"question3": "\"Fitur Cursor favorit Anda apa?\"",
+		"numberCard": "kartu nomor acak",
+		"sameNumber": "nomor yang sama"
+	},
+	"worldEvents": {
+		"title": "Cafe Cursor di seluruh dunia",
+		"subtitle": "Hari yang sama, zona waktu berbeda",
+		"description": "Pengguna Cursor membangun bersama di seluruh dunia. Meski beda zona waktu, kita satu komunitas."
+	}
+}

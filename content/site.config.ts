@@ -42,7 +42,7 @@ export const siteConfig: SiteConfig = {
 	discordUrl: undefined,
 	cursorCommunityUrl: 'https://cursor.com/community',
 	defaultLocale: 'en',
-	locales: ['en'],
+	locales: ['en', 'id'],
 	footerTagline: 'Cursor Community in Indonesia',
 };
 

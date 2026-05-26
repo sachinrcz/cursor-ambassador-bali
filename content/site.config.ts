@@ -35,7 +35,7 @@ export const siteConfig: SiteConfig = {
 		'AI coding',
 		'developer events',
 	],
-	lumaUrl: 'https://lu.ma/cursor-community',
+	lumaUrl: 'https://lu.ma/cursorcommunity',
 	// REPLACE: Add your Discord invite link when ready.
 	instagramUrl: 'https://www.instagram.com/cursorbali/',
 	xUrl: 'https://x.com/cursorbali',

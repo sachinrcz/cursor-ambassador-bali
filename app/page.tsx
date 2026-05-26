@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import HeroHeader from '@/components/HeroHeader';
 import RecentEventsGallery from '@/components/RecentEventsGallery';
 import AmbassadorSection from '@/components/AmbassadorSection';
+import JoinCommunitySection from '@/components/JoinCommunitySection';
 import FeaturedSection from '@/components/FeaturedSection';
 import UpcomingEvents from '@/components/UpcomingEvents';
 import PastEvents from '@/components/PastEvents';
@@ -56,7 +57,8 @@ const Home: React.FC = () => {
 				<SectionDivider />
 				<PastEvents />
 				<SectionDivider />
-				
+				<JoinCommunitySection />
+				<SectionDivider />
 				<AmbassadorSection />
 				<Footer />
 			</div>

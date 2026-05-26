@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
 	const nonce = crypto.randomUUID();
 	const isDev = process.env.NODE_ENV === 'development';
 
@@ -9,7 +9,7 @@ export function middleware(request: NextRequest) {
 		`default-src 'self'`,
 		`script-src 'self' 'nonce-${nonce}' 'strict-dynamic'${isDev ? " 'unsafe-eval'" : ''} https://va.vercel-scripts.com`,
 		`style-src 'self' 'unsafe-inline'`,
-		`img-src 'self' https://images.unsplash.com data: blob:`,
+		`img-src 'self' https://images.unsplash.com https://cdn.balisquad.com data: blob:`,
 		`font-src 'self'`,
 		`connect-src 'self' https://vitals.vercel-insights.com`,
 		`frame-src 'none'`,

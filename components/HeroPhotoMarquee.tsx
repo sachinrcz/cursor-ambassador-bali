@@ -46,7 +46,7 @@ function MarqueeStrip({ row }: { row: MarqueeRow }) {
 							fill
 							className="object-cover"
 							sizes="(max-width: 768px) 176px, 208px"
-							priority={Boolean(photo.priority) && index < row.photos.length}
+							loading="lazy"
 						/>
 					</div>
 				))}

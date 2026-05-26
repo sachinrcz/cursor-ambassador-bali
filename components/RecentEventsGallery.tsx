@@ -25,7 +25,7 @@ function buildRows(photos: HeaderPhoto[]): MarqueeRowConfig[] {
 	];
 }
 
-function GalleryMarqueeRow({ row }: { row: MarqueeRowConfig }) {
+function GalleryMarqueeRow({ row, isFirstRow }: { row: MarqueeRowConfig; isFirstRow: boolean }) {
 	const loop = [...row.photos, ...row.photos];
 
 	return (
@@ -47,7 +47,7 @@ function GalleryMarqueeRow({ row }: { row: MarqueeRowConfig }) {
 							fill
 							className="object-cover transition-transform duration-500 hover:scale-[1.03]"
 							sizes="(max-width: 768px) 216px, 272px"
-							priority={Boolean(photo.priority) && index < row.photos.length}
+							priority={isFirstRow && index === 0}
 						/>
 						<div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/[0.06]" />
 					</div>
@@ -83,7 +83,7 @@ const RecentEventsGallery: React.FC<RecentEventsGalleryProps> = ({ photos }) => 
 
 			<div className="relative z-0 mt-8 space-y-4 pb-14 md:mt-10 md:pb-16">
 				{rows.map((row, index) => (
-					<GalleryMarqueeRow key={index} row={row} />
+					<GalleryMarqueeRow key={index} row={row} isFirstRow={index === 0} />
 				))}
 			</div>
 		</motion.section>

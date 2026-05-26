@@ -29,6 +29,14 @@
 		"title": "Cursor {communityName} ambassadors",
 		"heading": "Meet the Team"
 	},
+	"joinCommunity": {
+		"heading": "Join the Community",
+		"subtitle": "Whether you're a seasoned developer or just getting started, there's a place for you in {communityName}.",
+		"instagram": "Follow on Instagram",
+		"x": "Join on X",
+		"discord": "Join Discord",
+		"joinNextEvent": "Join Next Event"
+	},
 	"footer": {
 		"hostingPartners": "Hosting Partners",
 		"community": "Cursor Community",

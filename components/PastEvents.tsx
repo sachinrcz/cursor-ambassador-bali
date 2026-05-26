@@ -18,6 +18,24 @@ const itemVariants = {
 	visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
 };
 
+const PREVIEW_PHOTO_COUNT = 6;
+
+function getPreviewPhotos(event: (typeof pastEvents)[number]) {
+	if (event.galleryImages && event.galleryImages.length > 0) {
+		return event.galleryImages.slice(0, PREVIEW_PHOTO_COUNT);
+	}
+
+	return event.thumbnail ? [event.thumbnail] : [];
+}
+
+function getPreviewGridClass(photoCount: number) {
+	if (photoCount <= 1) return '';
+	if (photoCount === 2) return 'grid grid-cols-2 gap-1';
+	if (photoCount === 3) return 'grid grid-cols-3 gap-1';
+	if (photoCount === 4) return 'grid grid-cols-2 grid-rows-2 gap-1';
+	return 'grid grid-cols-3 grid-rows-2 gap-1';
+}
+
 const PastEvents: React.FC = () => {
 	const { t, locale } = useI18n();
 
@@ -60,7 +78,11 @@ const PastEvents: React.FC = () => {
 						},
 					);
 
-					const hasGallery = event.galleryImages && event.galleryImages.length > 0;
+					const previewPhotos = getPreviewPhotos(event);
+					const remainingPhotoCount = Math.max(
+						(event.galleryImages?.length ?? previewPhotos.length) - previewPhotos.length,
+						0,
+					);
 
 					return (
 						<motion.div key={event.id} variants={itemVariants}>
@@ -68,32 +90,27 @@ const PastEvents: React.FC = () => {
 								<div className="relative bg-[#1B1913] border border-cursor-border rounded-none sm:rounded-md overflow-hidden transition-all duration-300 hover:border-[#f54e00]/50 hover:shadow-[0_0_30px_rgba(245,78,0,0.12)]">
 									{/* Glow backdrop */}
 									<div className="pointer-events-none absolute -inset-px sm:rounded-md bg-[radial-gradient(ellipse_at_bottom,rgba(245,78,0,0.06),transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
-									{event.thumbnail ? (
+									{previewPhotos.length > 0 ? (
 										<div className="relative">
 											<div
-												className={`aspect-[2/1] overflow-hidden ${hasGallery ? 'grid grid-cols-3 gap-1' : ''}`}
+												className={`aspect-[2/1] overflow-hidden ${getPreviewGridClass(previewPhotos.length)}`}
 											>
-												<div className={`relative ${hasGallery ? 'col-span-2' : ''}`}>
-													<Image
-														src={event.thumbnail}
-														alt={event.title}
-														fill
-														className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-														sizes="(max-width: 768px) 100vw, 60vw"
-													/>
-												</div>
-												{hasGallery &&
-													event.galleryImages!.slice(0, 2).map((img, i) => (
-														<div key={i} className="relative">
-															<Image
-																src={img}
-																alt=""
-																fill
-																className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-																sizes="(max-width: 768px) 33vw, 20vw"
-															/>
-														</div>
-													))}
+												{previewPhotos.map((img, i) => (
+													<div key={`${img}-${i}`} className="relative min-h-0">
+														<Image
+															src={img}
+															alt={i === 0 ? event.title : ''}
+															fill
+															className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+															sizes="(max-width: 768px) 33vw, 16vw"
+														/>
+														{i === previewPhotos.length - 1 && remainingPhotoCount > 0 ? (
+															<div className="absolute inset-0 flex items-center justify-center bg-black/55 text-sm font-medium text-white">
+																+{remainingPhotoCount} more
+															</div>
+														) : null}
+													</div>
+												))}
 											</div>
 											{event.host ? (
 												<div className="absolute top-3 right-3 bg-black/60 backdrop-blur-sm rounded-lg p-2 flex items-center gap-2">

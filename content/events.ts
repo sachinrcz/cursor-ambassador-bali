@@ -9,7 +9,9 @@ export const events: CursorEvent[] = [
 		displayDate: 'June 03, 2026',
 		location: 'Bali, Indonesia',
 		lumaUrl: 'https://luma.com/zj7cwg7l',
-		status: 'upcoming',
+		recapPath: '/recaps/cursor-bali-meetup-june-2026',
+		thumbnail: 'https://img.youtube.com/vi/lugAK-w9N0s/maxresdefault.jpg',
+		status: 'past',
 	},
 	{
 		id: 'cursor-jakarta-meetup-july-2026',

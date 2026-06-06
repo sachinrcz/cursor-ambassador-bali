@@ -20,7 +20,7 @@ export const cursorBaliHackathonMay2026Recap: RecapData = {
 	host: {
 		name: 'Bukithub Coworking Space',
 		logo: '/images/partners/bukithub.jpg',
-		url: 'https://instagram.com/bukithub',
+		url: 'https://bukithub.com',
 	},
 	projects: [
 		{

@@ -91,10 +91,12 @@ export interface RecapData {
 	attendees?: number;
 	summary: string[];
 	host?: { name: string; logo: string; url?: string };
+	videoUrl?: string;
 	speakers?: RecapSpeaker[];
 	projects?: RecapProject[];
 	highlights?: RecapHighlight[];
 	resources?: RecapResource[];
+	thanks?: RecapResource[];
 	photoCredits?: RecapPhotoCredit[];
 	photos: GalleryPhoto[];
 }

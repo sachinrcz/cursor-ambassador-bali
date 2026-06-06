@@ -3,13 +3,18 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { Mic, Lightbulb, MessageSquareQuote, Link as LinkIcon } from 'lucide-react';
+import { Mic, Lightbulb, MessageSquareQuote, Link as LinkIcon, Play } from 'lucide-react';
 import PhotoGallery from '@/components/PhotoGallery';
 import { RecapData } from '@/lib/types';
 import { useI18n } from '@/lib/i18n';
 
 interface EventRecapProps {
 	recap: RecapData;
+}
+
+function getYouTubeId(url: string): string | null {
+	const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([^&?/]+)/);
+	return match?.[1] ?? null;
 }
 
 const EventRecap: React.FC<EventRecapProps> = ({ recap }) => {
@@ -56,7 +61,49 @@ const EventRecap: React.FC<EventRecapProps> = ({ recap }) => {
 					{recap.summary.map((paragraph, index) => (
 						<p key={index}>{paragraph}</p>
 					))}
+					{recap.thanks && recap.thanks.length > 0 ? (
+						<p>
+							{t('recap.thanksPrefix')}{' '}
+							{recap.thanks.map((link, index) => (
+								<React.Fragment key={link.url}>
+									{index > 0
+										? index === recap.thanks!.length - 1
+											? ` ${t('recap.thanksAnd')} `
+											: ', '
+										: null}
+									<a
+										href={link.url}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="text-cursor-text hover:underline"
+									>
+										{link.label}
+									</a>
+								</React.Fragment>
+							))}
+							{t('recap.thanksSuffix')}
+						</p>
+					) : null}
 				</div>
+
+				{recap.videoUrl && getYouTubeId(recap.videoUrl) ? (
+					<div className="border-t border-cursor-border mt-6 pt-6">
+						<div className="flex items-center gap-2 mb-4">
+							<Play className="w-4 h-4 text-cursor-accent-orange" />
+							<h3 className="text-sm font-medium text-cursor-text">{t('recap.video')}</h3>
+						</div>
+						<div className="relative aspect-video overflow-hidden rounded-lg border border-cursor-border bg-cursor-bg-dark">
+							<iframe
+								src={`https://www.youtube.com/embed/${getYouTubeId(recap.videoUrl)}`}
+								title={recap.title}
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+								referrerPolicy="strict-origin-when-cross-origin"
+								allowFullScreen
+								className="absolute inset-0 h-full w-full"
+							/>
+						</div>
+					</div>
+				) : null}
 
 				{/* Speakers */}
 				{recap.speakers && recap.speakers.length > 0 ? (

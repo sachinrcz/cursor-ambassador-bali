@@ -13,8 +13,6 @@ const securityHeaders = [
 	{ key: 'Cross-Origin-Opener-Policy', value: 'same-origin' },
 	// Prevents other origins from embedding this site's resources
 	{ key: 'Cross-Origin-Resource-Policy', value: 'same-origin' },
-	// Requires all sub-resources to opt in to cross-origin sharing; credentialless is safer than require-corp for third-party content
-	{ key: 'Cross-Origin-Embedder-Policy', value: 'credentialless' },
 ];
 
 const nextConfig = {
@@ -35,6 +33,10 @@ const nextConfig = {
 			{
 				protocol: 'https',
 				hostname: 'cdn.balisquad.com',
+			},
+			{
+				protocol: 'https',
+				hostname: 'img.youtube.com',
 			},
 		],
 	},

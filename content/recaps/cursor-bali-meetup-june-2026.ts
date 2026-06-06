@@ -1,5 +1,10 @@
 import { RecapData } from '@/lib/types';
 
+const cdnPhoto = (filename: string, alt: string) => ({
+	src: `https://cdn.balisquad.com/cursor/cursor-bali-june/${filename}`,
+	alt,
+});
+
 export const cursorBaliMeetupJune2026Recap: RecapData = {
 	slug: 'cursor-bali-meetup-june-2026',
 	title: 'Cursor AI for Beginners',
@@ -35,5 +40,12 @@ export const cursorBaliMeetupJune2026Recap: RecapData = {
 			url: 'https://www.instagram.com/reel/DZPMSp0yBGD/?igsh=amtwamF3YzMwOGZz',
 		},
 	],
-	photos: [],
+	photos: [
+		cdnPhoto('IMG_0614.jpg', 'Attendees collaborating hands-on with laptops at the meetup'),
+		cdnPhoto('image%20(1).png', 'Introduction to Cursor session at Bukithub Coworking'),
+		cdnPhoto('image%20(3).png', 'Lightning talk with Cursor editor on screen'),
+		cdnPhoto('image%20(4).png', 'Presenter demonstrating Cursor workflows to the group'),
+		cdnPhoto('image%20(5).png', 'Community member leading a session at the meetup'),
+		cdnPhoto('image.png', 'Attendees working through a hands-on Cursor workshop'),
+	],
 };

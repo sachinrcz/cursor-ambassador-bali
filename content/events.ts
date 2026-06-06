@@ -10,7 +10,15 @@ export const events: CursorEvent[] = [
 		location: 'Bali, Indonesia',
 		lumaUrl: 'https://luma.com/zj7cwg7l',
 		recapPath: '/recaps/cursor-bali-meetup-june-2026',
-		thumbnail: 'https://img.youtube.com/vi/lugAK-w9N0s/maxresdefault.jpg',
+		thumbnail: 'https://cdn.balisquad.com/cursor/cursor-bali-june/image%20(1).png',
+		galleryImages: [
+			'https://cdn.balisquad.com/cursor/cursor-bali-june/image%20(1).png',
+			'https://cdn.balisquad.com/cursor/cursor-bali-june/IMG_0614.jpg',
+			'https://cdn.balisquad.com/cursor/cursor-bali-june/image%20(3).png',
+			'https://cdn.balisquad.com/cursor/cursor-bali-june/image%20(4).png',
+			'https://cdn.balisquad.com/cursor/cursor-bali-june/image%20(5).png',
+			'https://cdn.balisquad.com/cursor/cursor-bali-june/image.png',
+		],
 		status: 'past',
 	},
 	{

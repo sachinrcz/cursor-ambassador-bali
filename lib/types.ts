@@ -6,6 +6,7 @@ export interface CursorEvent {
 	titleLocal?: string;
 	date: string;
 	displayDate: string;
+	startTime?: string;
 	attendees?: number;
 	location: string;
 	lumaUrl?: string;

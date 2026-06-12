@@ -18,6 +18,13 @@
 		"upcomingEvents": "Acara Mendatang",
 		"upcomingHeading": "Selanjutnya",
 		"register": "Daftar",
+		"countdown": {
+			"startsIn": "Dimulai dalam",
+			"days": "Hari",
+			"hours": "Jam",
+			"minutes": "Mnt",
+			"seconds": "Dtk"
+		},
 		"pastEvents": "Acara Sebelumnya",
 		"pastEventsHeading": "Rekap Acara",
 		"attendees": "{count} peserta",

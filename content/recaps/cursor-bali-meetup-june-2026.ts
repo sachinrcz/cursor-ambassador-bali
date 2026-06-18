@@ -42,10 +42,10 @@ export const cursorBaliMeetupJune2026Recap: RecapData = {
 	],
 	photos: [
 		cdnPhoto('IMG_0614.jpg', 'Attendees collaborating hands-on with laptops at the meetup'),
-		cdnPhoto('image%20(1).png', 'Introduction to Cursor session at Bukithub Coworking'),
-		cdnPhoto('image%20(3).png', 'Lightning talk with Cursor editor on screen'),
-		cdnPhoto('image%20(4).png', 'Presenter demonstrating Cursor workflows to the group'),
-		cdnPhoto('image%20(5).png', 'Community member leading a session at the meetup'),
+		cdnPhoto('image (1).png', 'Introduction to Cursor session at Bukithub Coworking'),
+		cdnPhoto('image (3).png', 'Lightning talk with Cursor editor on screen'),
+		cdnPhoto('image (4).png', 'Presenter demonstrating Cursor workflows to the group'),
+		cdnPhoto('image (5).png', 'Community member leading a session at the meetup'),
 		cdnPhoto('image.png', 'Attendees working through a hands-on Cursor workshop'),
 	],
 };

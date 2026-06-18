@@ -18,7 +18,7 @@ const itemVariants = {
 	visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
 };
 
-const PREVIEW_PHOTO_COUNT = 6;
+const PREVIEW_PHOTO_COUNT = 4;
 
 function getPreviewPhotos(event: (typeof pastEvents)[number]) {
 	if (event.galleryImages && event.galleryImages.length > 0) {

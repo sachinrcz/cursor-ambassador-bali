@@ -2,11 +2,40 @@ import { CursorEvent } from '@/lib/types';
 
 // REPLACE: Replace all sample events, locations, and Luma URLs with real community events.
 export const events: CursorEvent[] = [
+	
+	{
+		id: 'cursor-bali-meetup-july-2026',
+		title: 'Cursor Meetup - AI Agent 101',
+		date: '2026-07-08',
+		displayDate: 'July 08, 2026',
+		location: 'Bali, Indonesia',
+		lumaUrl: 'https://luma.com/cursor-jo24',
+		status: 'upcoming',
+	},	
+	{
+		id: 'cursor-jakarta-meetup-august-2026',
+		title: 'Cursor Meetup Jakarta',
+		date: '2026-08-01',
+		displayDate: 'August 01, 2026',
+		location: 'Jakarta, Indonesia',
+		lumaUrl: 'https://luma.com/4qe99i6e',
+		status: 'upcoming',
+	},
+	{
+		id: 'cursor-jakarta-hackathon-september-2026',
+		title: 'Cursor Hackathon Indonesia',
+		date: '2026-09-10',
+		displayDate: 'September 10, 2026',
+		location: 'Jakarta, Indonesia',
+		lumaUrl: 'https://luma.com/4qe99i6e',
+		status: 'upcoming',
+	},
 	{
 		id: 'cursor-bali-meetup-june-2026',
 		title: 'Cursor AI for Beginners',
 		date: '2026-06-03',
 		displayDate: 'June 03, 2026',
+		attendees: 25,
 		location: 'Bali, Indonesia',
 		lumaUrl: 'https://luma.com/zj7cwg7l',
 		recapPath: '/recaps/cursor-bali-meetup-june-2026',
@@ -21,24 +50,7 @@ export const events: CursorEvent[] = [
 		],
 		status: 'past',
 	},
-	{
-		id: 'cursor-jakarta-meetup-july-2026',
-		title: 'Cursor Meetup Jakarta',
-		date: '2026-07-04',
-		displayDate: 'July 04, 2026',
-		location: 'Jakarta, Indonesia',
-		lumaUrl: 'https://luma.com/4qe99i6e',
-		status: 'upcoming',
-	},
-	{
-		id: 'cursor-bali-meetup-july-2026',
-		title: 'Cursor Meetup - AI Agent 101',
-		date: '2026-07-08',
-		displayDate: 'July 08, 2026',
-		location: 'Bali, Indonesia',
-		lumaUrl: 'https://luma.com/cursor-jo24',
-		status: 'upcoming',
-	},	
+	
 	{
 		id: 'cursor-bali-hackathon-may-2026',
 		title: 'Cursor Bali Hackathon',
@@ -67,6 +79,7 @@ export const events: CursorEvent[] = [
 		],
 		status: 'past',
 	},
+	
 ];
 
 export const upcomingEvents = events.filter((event) => event.status === 'upcoming');

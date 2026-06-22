@@ -5,6 +5,8 @@ import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 import { upcomingEvents } from '@/content/events';
 import { useI18n } from '@/lib/i18n';
+import EventCountdown from '@/components/EventCountdown';
+import { parseEventDate } from '@/lib/useCountdown';
 
 const UpcomingEvents: React.FC = () => {
 	const { t, locale } = useI18n();
@@ -13,7 +15,14 @@ const UpcomingEvents: React.FC = () => {
 		return null;
 	}
 
-	const [featured, ...rest] = upcomingEvents;
+	const nextEventIndex = upcomingEvents.findIndex(
+		(event) => parseEventDate(event.date, event.startTime).getTime() > Date.now(),
+	);
+	const featured = nextEventIndex >= 0 ? upcomingEvents[nextEventIndex] : upcomingEvents[0];
+	const rest =
+		nextEventIndex >= 0
+			? [...upcomingEvents.slice(0, nextEventIndex), ...upcomingEvents.slice(nextEventIndex + 1)]
+			: upcomingEvents.slice(1);
 
 	const formatDate = (date: string, style: 'short' | 'long' = 'short') =>
 		new Date(`${date}T00:00:00`).toLocaleDateString(locale === 'en' ? 'en-US' : locale, {
@@ -60,6 +69,7 @@ const UpcomingEvents: React.FC = () => {
 					<span>{city}</span>
 				</div>
 				<h3 className="text-2xl font-bold text-cursor-text mb-3">{featured.title}</h3>
+				<EventCountdown date={featured.date} startTime={featured.startTime} />
 				{featured.lumaUrl ? (
 					<a
 						href={featured.lumaUrl}

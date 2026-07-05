@@ -91,5 +91,7 @@ export const events: CursorEvent[] = [
 	
 ];
 
-export const upcomingEvents = events.filter((event) => event.status === 'upcoming');
+export const upcomingEvents = events
+	.filter((event) => event.status === 'upcoming')
+	.sort((a, b) => a.date.localeCompare(b.date));
 export const pastEvents = events.filter((event) => event.status === 'past');

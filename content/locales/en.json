@@ -18,6 +18,13 @@
 		"upcomingEvents": "Upcoming Events",
 		"upcomingHeading": "What's Next",
 		"register": "Register",
+		"countdown": {
+			"startsIn": "Starts in",
+			"days": "Days",
+			"hours": "Hours",
+			"minutes": "Min",
+			"seconds": "Sec"
+		},
 		"pastEvents": "Past Events",
 		"pastEventsHeading": "Event Recaps",
 		"attendees": "{count} attendees",

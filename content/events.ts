@@ -13,6 +13,15 @@ export const events: CursorEvent[] = [
 		status: 'upcoming',
 	},	
 	{
+		id: 'cursor-bali-meetup-august-2026',
+		title: 'Cafe Cursor Bali',
+		date: '2026-08-03',
+		displayDate: 'August 03, 2026',
+		location: 'Bali, Indonesia',
+		lumaUrl: 'https://luma.com/cursor-3oa8',
+		status: 'upcoming',
+	},	
+	{
 		id: 'cursor-jakarta-meetup-august-2026',
 		title: 'Cursor Meetup Jakarta',
 		date: '2026-08-01',

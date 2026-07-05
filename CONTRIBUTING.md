@@ -9,13 +9,13 @@ Thanks for helping improve the Cursor Ambassador Site Template.
 3. Install dependencies:
 
    ```bash
-   npm install
+   pnpm install
    ```
 
 4. Start development:
 
    ```bash
-   npm run dev
+   pnpm dev
    ```
 
 ## Making Changes
@@ -40,7 +40,7 @@ Thanks for helping improve the Cursor Ambassador Site Template.
 3. Run build before submitting:
 
    ```bash
-   npm run build
+   pnpm build
    ```
 
 4. Open a PR with:

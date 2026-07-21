@@ -10,7 +10,7 @@ export const events: CursorEvent[] = [
 		displayDate: 'July 08, 2026',
 		location: 'Bali, Indonesia',
 		lumaUrl: 'https://luma.com/cursor-jo24',
-		status: 'upcoming',
+		status: 'past',
 	},	
 	{
 		id: 'cursor-bali-meetup-august-2026',

@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
+import EventCountdown from '@/components/EventCountdown';
 import { upcomingEvents } from '@/content/events';
 import { useI18n } from '@/lib/i18n';
 
@@ -60,6 +61,7 @@ const UpcomingEvents: React.FC = () => {
 					<span>{city}</span>
 				</div>
 				<h3 className="text-2xl font-bold text-cursor-text mb-3">{featured.title}</h3>
+				<EventCountdown date={featured.date} startTime={featured.startTime} />
 				{featured.lumaUrl ? (
 					<a
 						href={featured.lumaUrl}

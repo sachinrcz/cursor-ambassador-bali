@@ -1,0 +1,48 @@
+.cafemenu-page {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 2rem 1rem;
+	background: #14120b;
+}
+
+.cafe-menu-card {
+	box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45);
+}
+
+@media print {
+	@page {
+		size: 105mm 148mm;
+		margin: 0;
+	}
+
+	html,
+	body {
+		width: 105mm;
+		height: 148mm;
+		margin: 0 !important;
+		padding: 0 !important;
+		overflow: hidden !important;
+		background: #000 !important;
+		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
+	}
+
+	.cafemenu-page {
+		min-height: 0;
+		padding: 0;
+		background: #000 !important;
+	}
+
+	.cafe-menu-card {
+		width: 105mm !important;
+		min-height: 148mm !important;
+		margin: 0 !important;
+		box-shadow: none !important;
+		page-break-after: avoid;
+		page-break-inside: avoid;
+		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
+	}
+}

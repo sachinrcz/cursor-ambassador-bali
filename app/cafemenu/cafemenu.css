@@ -11,6 +11,10 @@
 	box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45);
 }
 
+.cafe-menu-section + .cafe-menu-section {
+	margin-top: 0.625rem;
+}
+
 @media print {
 	@page {
 		size: 105mm 148mm;
@@ -31,17 +35,22 @@
 
 	.cafemenu-page {
 		min-height: 0;
+		height: 148mm;
 		padding: 0;
 		background: #000 !important;
+		align-items: flex-start;
 	}
 
 	.cafe-menu-card {
 		width: 105mm !important;
-		min-height: 148mm !important;
+		height: 148mm !important;
+		max-height: 148mm !important;
+		min-height: 0 !important;
 		margin: 0 !important;
 		box-shadow: none !important;
 		page-break-after: avoid;
 		page-break-inside: avoid;
+		overflow: hidden;
 		-webkit-print-color-adjust: exact;
 		print-color-adjust: exact;
 	}

@@ -8,11 +8,64 @@
 }
 
 .cafe-menu-card {
+	width: 105mm;
+	height: 148mm;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	padding: 6mm 6mm;
 	box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45);
+	overflow: hidden;
 }
 
-.cafe-menu-section + .cafe-menu-section {
-	margin-top: 0.625rem;
+.cafe-menu-logo {
+	height: 5.5mm;
+	width: auto;
+}
+
+.cafe-menu-content {
+	flex: 1 1 0;
+	min-height: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding-top: 4mm;
+}
+
+.cafe-menu-meta {
+	font-size: 2.75mm;
+	line-height: 1.32;
+	color: #c87850;
+}
+
+.cafe-menu-meta p {
+	margin: 0;
+}
+
+.cafe-menu-section {
+	flex-shrink: 0;
+}
+
+.cafe-menu-endpoint {
+	margin: 0;
+	font-size: 3.85mm;
+	font-weight: 600;
+	letter-spacing: -0.01em;
+	color: #fff;
+}
+
+.cafe-menu-status {
+	font-size: 3.6mm;
+	font-weight: 500;
+	color: #7cb87c;
+}
+
+.cafe-menu-json {
+	margin: 1mm 0 0;
+	font-size: 3.15mm;
+	line-height: 1.28;
+	color: rgb(255 255 255 / 0.95);
+	white-space: pre-wrap;
 }
 
 @media print {
@@ -23,8 +76,9 @@
 
 	html,
 	body {
-		width: 105mm;
-		height: 148mm;
+		width: 105mm !important;
+		height: 148mm !important;
+		max-height: 148mm !important;
 		margin: 0 !important;
 		padding: 0 !important;
 		overflow: hidden !important;
@@ -33,25 +87,62 @@
 		print-color-adjust: exact;
 	}
 
+	body > * {
+		min-height: 0 !important;
+	}
+
 	.cafemenu-page {
-		min-height: 0;
+		position: fixed;
+		inset: 0;
+		width: 105mm;
 		height: 148mm;
+		max-height: 148mm;
+		min-height: 0 !important;
+		margin: 0;
 		padding: 0;
+		display: block;
 		background: #000 !important;
-		align-items: flex-start;
+		overflow: hidden;
 	}
 
 	.cafe-menu-card {
 		width: 105mm !important;
 		height: 148mm !important;
 		max-height: 148mm !important;
-		min-height: 0 !important;
 		margin: 0 !important;
+		padding: 6mm 6mm !important;
 		box-shadow: none !important;
+		page-break-before: avoid;
 		page-break-after: avoid;
 		page-break-inside: avoid;
+		break-inside: avoid;
 		overflow: hidden;
 		-webkit-print-color-adjust: exact;
 		print-color-adjust: exact;
+	}
+
+	.cafe-menu-logo {
+		height: 5.5mm;
+	}
+
+	.cafe-menu-content {
+		padding-top: 3.5mm;
+	}
+
+	.cafe-menu-meta {
+		font-size: 2.75mm;
+	}
+
+	.cafe-menu-endpoint {
+		font-size: 3.85mm;
+	}
+
+	.cafe-menu-status {
+		font-size: 3.5mm;
+	}
+
+	.cafe-menu-json {
+		font-size: 3.15mm;
+		margin-top: 1mm;
 	}
 }

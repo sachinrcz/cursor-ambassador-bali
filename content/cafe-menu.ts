@@ -1,13 +1,13 @@
 export interface CafeMenuConfig {
 	server: string;
-	food: string[];
+	snack: string[];
 	tea: string[];
 	coffee: string[];
 }
 
 export const cafeMenuConfig: CafeMenuConfig = {
 	server: 'Cafe Cursor Bali Aug_2026',
-	food: ['Croissant', 'Soft Cookies', 'Banana Bread'],
+	snack: ['Croissant', 'Monkey Bread'],
 	tea: ['Iced Tea', 'Lychee Iced Tea', 'Hot Tea'],
 	coffee: ['Americano', 'Latte', 'Cappuccino'],
 };

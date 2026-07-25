@@ -78,15 +78,13 @@ export default function CafeInfoCard({ config }: CafeInfoCardProps) {
 					{partners.map((partner) => (
 						<div key={partner.name} className="flex flex-col items-center text-center">
 							{partner.logo ? (
-								<div className="flex h-12 w-full items-center justify-center rounded-md border border-white/10 bg-white/[0.03] px-2">
-									<Image
-										src={partner.logo}
-										alt={partner.name}
-										width={120}
-										height={48}
-										className="max-h-8 w-auto max-w-full object-contain"
-									/>
-								</div>
+								<Image
+									src={partner.logo}
+									alt={partner.name}
+									width={180}
+									height={72}
+									className="max-h-16 w-auto max-w-full object-contain"
+								/>
 							) : null}
 							<p className="mt-2 text-[12px] font-medium text-white">{partner.name}</p>
 						</div>

@@ -40,8 +40,8 @@ export const cafeInfoConfig: CafeInfoConfig = {
 	],
 	usefulLinks: [
 		{
-			label: 'Cursor AI Bali',
-			url: 'https://balisquad.com/page/cursor-ai-bali',
+			label: 'Cursor Bali',
+			url: 'https://balisquad.com/page/cursor-bali',
 		},
 		{
 			label: 'Cursor Community',

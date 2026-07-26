@@ -12,6 +12,26 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
 	);
 }
 
+function DisplayUrl({ url }: { url: string }) {
+	const parts = url.replace(/^https?:\/\//, '').split('/');
+
+	return (
+		<p className="mt-1 text-[9px] leading-snug text-white/45">
+			{parts.map((part, index) => (
+				<span key={`${part}-${index}`}>
+					{index > 0 ? (
+						<>
+							/
+							<wbr />
+						</>
+					) : null}
+					{part}
+				</span>
+			))}
+		</p>
+	);
+}
+
 export default function CafeInfoCard({ config }: CafeInfoCardProps) {
 	const { welcome, getStarted, usefulLinks, partners } = config;
 
@@ -63,9 +83,7 @@ export default function CafeInfoCard({ config }: CafeInfoCardProps) {
 							</div>
 							<div className="min-w-0 pt-0.5">
 								<p className="text-[11px] font-medium leading-snug text-white">{link.label}</p>
-								<p className="mt-1 break-all text-[9px] leading-snug text-white/45">
-									{link.url.replace(/^https?:\/\//, '')}
-								</p>
+								<DisplayUrl url={link.url} />
 							</div>
 						</div>
 					))}

@@ -2,15 +2,15 @@ import { Ambassador } from '@/lib/types';
 
 // REPLACE: Swap names, roles, photos, and links with your ambassador team.
 export const ambassadors: Ambassador[] = [
-	{
-		name: 'Sachin',
-		role: 'Cursor Ambassador',
-		photo: '/images/ambassadors/amb1.jpg',
-		links: {
-			linkedin: 'https://www.linkedin.com/in/sachin-s-b51bba253',
-			x: 'https://x.com/sachin_anatta',
-		},
-	},
+	// {
+	// 	name: 'Sachin',
+	// 	role: 'Cursor Ambassador',
+	// 	photo: '/images/ambassadors/amb1.jpg',
+	// 	links: {
+	// 		linkedin: 'https://www.linkedin.com/in/sachin-s-b51bba253',
+	// 		x: 'https://x.com/sachin_anatta',
+	// 	},
+	// },
 	{
 		name: 'Naufaldi Rafif',
 		role: 'Cursor Ambassador',
